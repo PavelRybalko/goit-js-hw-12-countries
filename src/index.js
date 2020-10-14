@@ -6,9 +6,12 @@ import refs from './js/refs';
 import fetchCountries from './js/fetchCountries';
 
 const fetchCountriesWithDebounce = debounce(() => {
-  fetchCountries(refs.inputRef.value);
+  fetchCountries(refs.inputRef.value.trim());
 }, 500);
-refs.inputRef.addEventListener('input', fetchCountriesWithDebounce);
+refs.inputRef.addEventListener('input', (event) => {
+  if(event.data === " ")return;
+  fetchCountriesWithDebounce()
+});
 
 refs.countriesContainerRef.addEventListener('click', event => {
   if (event.target.nodeName !== 'LI') return;

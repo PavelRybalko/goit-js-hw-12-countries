@@ -7,7 +7,7 @@ import { alert, notice, info, success, error } from '@pnotify/core';
 
 export default function fetchCountries(searchQuery) {
   
-  const url = `https://restcountries.eu/rest/v2/name/${searchQuery.trim()}`;
+  const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`;
   if(!searchQuery) return;
 
   return fetch(url)
