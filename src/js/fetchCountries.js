@@ -21,7 +21,9 @@ export default function fetchCountries(searchQuery) {
         refs.inputRef.value = "";
       } else if (data.length > 1 && data.length <= 10) {
         createMarkups(data, countriesListTemplate);
-      }
+      } else {
+        error(data.message);
+      };
     })
     .catch(error => console.log(error));
 }

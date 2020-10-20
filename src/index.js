@@ -1,6 +1,7 @@
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
-var debounce = require('lodash.debounce');
+// var debounce = require('lodash.debounce');
+import * as debounce from 'lodash.debounce';
 import './sass/styles.scss';
 import refs from './js/refs';
 import fetchCountries from './js/fetchCountries';
